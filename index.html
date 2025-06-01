@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gazo</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet" />
+
+  <!-- Your style.css file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="background-glow"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+
+  <!-- Intro animation -->
+  <div id="intro">
+    <div class="intro-text">grrz8</div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Gazo</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.roblox.com/users/2797568342/profile" target="_blank" rel="noopener noreferrer">Roblox</a>
+      <a href="https://discord.com/users/grrz8" target="_blank" rel="noopener noreferrer">Discord</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Hey! I’m <strong>grrz8</strong>, a professional Visual Studio Code and Python coder with a passion for Roblox Studio development.</p>
+    <p>I specialize in building sleek, performant projects with clean, maintainable code.</p>
+    <p>Currently working on innovative coding projects — always pushing to deliver quality and creativity.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects & Skills</h2>
+    <ul>
+      <li>Expert in Visual Studio Code (VSC) — writing Python, JavaScript, and more.</li>
+      <li>Roblox Studio: creating engaging games, tools, and custom UIs.</li>
+      <li>Custom GUI design & animations for modern user experiences.</li>
+      <li>Building professional, maintainable codebases and utilities.</li>
+      <li>Familiar with scripting, API integrations, and optimization.</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Hire Me</h2>
+    <p>I’m available for hire for Roblox Studio projects and custom coding in Visual Studio Code.</p>
+    <p>If you want a highly professional developer who delivers quality, creativity, and dedication — let’s connect!</p>
+    <p>
+      <a href="https://www.roblox.com/users/2797568342/profile" class="button" target="_blank" rel="noopener noreferrer">Roblox Profile</a>
+      <a href="https://discord.com/users/grrz8" class="button" target="_blank" rel="noopener noreferrer">Discord: grrz8</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Gazo — Visual Studio Code & Roblox Studio Developer
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Intro animation fade & hide
+    const intro = document.getElementById('intro');
+    intro.addEventListener('animationend', () => {
+      intro.style.display = 'none';
+    });
+
+    // Custom cursor follow
+    const cursor = document.getElementById('cursor');
+
+    window.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Add hover effect to scale cursor when hovering links/buttons
+    const interactiveElements = document.querySelectorAll('a, button');
+
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-hover');
+      });
+    });
+
+    // Scroll fade-in for sections
+    const sections = document.querySelectorAll('.section');
+
+    function checkSections() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkSections);
+    window.addEventListener('load', checkSections);
+  </script>
+
+</body>
+</html>
